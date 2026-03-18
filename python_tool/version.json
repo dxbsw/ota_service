@@ -1,0 +1,7 @@
+{
+    "version": "1.0.5",
+    "url": "http://192.168.3.17:8000/firmware/firmware.bin",
+    "description": "New firmware version 1.0.5, test release.",
+    "mandatory": false,
+    "size": 1384016
+}
