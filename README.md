@@ -40,11 +40,19 @@ void app_main(void)
 dependencies:
   ota_service:
     git: "https://github.com/dxbsw/ota_service.git"
-    version: "v1.0.0"
+    version: "v1.0.1"
 ```
  
 随后 `idf.py reconfigure` 或 `idf.py build` 即可自动下载并集成。
+
+## 组件中心（发布后使用）
+
+```yaml
+dependencies:
+  dxbsw/ota_service:
+    version: "^1.0.1"
+```
  
 ## 版本
  
-- v1.0.0 初始版本
+- v1.0.1 补充许可证与发布元数据
