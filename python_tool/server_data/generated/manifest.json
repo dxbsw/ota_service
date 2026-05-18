@@ -1,0 +1,29 @@
+{
+  "format_version": 2,
+  "firmware_compat": "1.0.1",
+  "manifest_version": "1.0.1",
+  "resources": [
+    {
+      "name": "test_text",
+      "type": "text",
+      "version": "1.0.3",
+      "partition": "assets",
+      "access": "littlefs",
+      "path": "/texts/test_0.txt",
+      "size": 80,
+      "sha256": "f7e03c860604fd84199196c5d796aa15995cb1b42ac21be3e5c0ff147cd6bf88",
+      "required": true
+    },
+    {
+      "name": "test_json",
+      "type": "json",
+      "version": "1.0.3",
+      "partition": "assets",
+      "access": "littlefs",
+      "path": "/configs/test_1.json",
+      "size": 105,
+      "sha256": "49f3c014006a565d6f7ff8de408c767bc5850440b5fc85d7933f39d7c14ca12a",
+      "required": false
+    }
+  ]
+}

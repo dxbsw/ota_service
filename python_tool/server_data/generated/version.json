@@ -1,0 +1,8 @@
+{
+  "version": "1.0.3",
+  "url": "http://192.168.3.198:8000/firmware/BLE_TEST.bin",
+  "sha256": "80918663749cf504f629e866fb1b720c96ee92939e8aafe8c3235434437ec97e",
+  "size": 1451136,
+  "mandatory": false,
+  "description": "BLE_TEST firmware 1.0.2 test release"
+}

@@ -1,0 +1,88 @@
+{
+  // OTA 协议版本，当前客户端固定使用 1。
+  "protocol_version": 1,
+
+  // manifest 格式版本，当前资源索引格式使用 2。
+  "format_version": 2,
+
+  // 资源包适配的最低固件版本。
+  "firmware_compat": "1.0.1",
+
+  // 整份资源清单版本。
+  // 当资源集合整体有变化时建议递增。
+  "manifest_version": "1.0.1",
+
+  // 固件 OTA 配置。
+  "firmware": {
+    // 服务器对外声明的固件版本。
+    // 设备端会用它和本地 PROJECT_VER 比较，远端更大才执行固件 OTA。
+    "version": "1.0.3",
+
+    // 固件文件路径，基于 python_tool/server_data 的相对路径。
+    "file": "firmware/BLE_TEST.bin",
+
+    // 为 true 时，服务端启动后会自动把工程 build/BLE_TEST.bin 同步到上面的 file。
+    // 这样每次重新编译后不需要手工复制 bin。
+    "sync_from_build": true,
+
+    // 是否强制升级。
+    "mandatory": false,
+
+    // 固件描述信息，会出现在 metadata.json 中。
+    "description": "BLE_TEST firmware 1.0.2 test release"
+  },
+
+  // 模型升级资源列表。
+  // 这里的文件建议放在 python_tool/server_data/models 下。
+  // access 使用 mmap，partition 使用 models。
+  // offset 需要 4KB 对齐，reserved_size 为模型预留空间。
+  "models": [
+    /*
+    {
+      "name": "srmodels_pack",
+      "type": "model",
+      "version": "1.0.0",
+      "file": "models/srmodels.bin",
+      "path": "/srmodels.bin",
+      "partition": "models",
+      "access": "mmap",
+      "offset": 0,
+      "reserved_size": 2097152,
+      "required": true
+    }
+    */
+  ],
+
+  // assets 分区资源列表。
+  // file 是 server_data 下的相对文件路径。
+  // path 是设备端 LittleFS 中保存的逻辑路径。
+  "assets": [
+    {
+      // 资源逻辑名，需尽量唯一。
+      "name": "test_text",
+
+      // 资源类型，自定义字符串即可。
+      "type": "text",
+
+      // 该资源自己的版本号。
+      "version": "1.0.3",
+
+      // 服务端实际文件位置，相对于 python_tool/server_data。
+      "file": "assets/texts/test_0.txt",
+
+      // 设备保存路径，最终会落到 /assets/texts/test_0.txt。
+      "path": "/texts/test_0.txt",
+
+      // 是否为关键资源。
+      "required": true
+    },
+    {
+      "name": "test_json",
+      "type": "json",
+      "version": "1.0.3",
+      "file": "assets/configs/test_1.json",
+      "path": "/configs/test_1.json",
+      "required": false
+    }
+  ]
+}

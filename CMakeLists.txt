@@ -1,3 +1,20 @@
-idf_component_register(SRCS "src/ota_service.c"
-                       INCLUDE_DIRS "include"
-                       REQUIRES esp_https_ota esp_http_client json esp_timer app_update nvs_flash)
+idf_component_register(
+    SRCS
+        "src/ota_service_core.c"
+        "src/ota_service_plan.c"
+        "src/ota_service_remote.c"
+        "src/ota_service_storage.c"
+        "src/ota_service_worker.c"
+    INCLUDE_DIRS
+        "include"
+    PRIV_INCLUDE_DIRS
+        "src"
+    REQUIRES
+        app_update
+        esp_http_client
+        esp_timer
+        json
+        littlefs
+        mbedtls
+        version_checker
+)
