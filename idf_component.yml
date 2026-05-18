@@ -1,5 +1,5 @@
 name: "ota-service"
-version: "1.0.2"
+version: "1.0.3"
 description: "Firmware and assets OTA component for ESP-IDF"
 url: "https://github.com/dxbsw/ota_service"
 license: "MIT"
